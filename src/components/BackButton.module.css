@@ -1,0 +1,51 @@
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.backButton:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+  transform: translateX(-4px);
+}
+
+.backButton:active {
+  transform: translateX(-2px);
+}
+
+.backIcon {
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover .backIcon {
+  transform: translateX(-2px);
+}
+
+.backText {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .backButton {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .backIcon {
+    font-size: 16px;
+  }
+}

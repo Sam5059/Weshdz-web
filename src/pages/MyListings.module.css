@@ -1,0 +1,203 @@
+.myListings {
+  padding: 40px 0;
+  min-height: calc(100vh - 80px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: var(--text-primary);
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.empty p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.listingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.listingCard {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.listingCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.listingImage {
+  display: block;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: var(--bg-main);
+}
+
+.listingImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.listingCard:hover .listingImage img {
+  transform: scale(1.05);
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  opacity: 0.3;
+}
+
+.listingContent {
+  padding: 20px;
+}
+
+.listingTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.listingTitle:hover {
+  color: var(--primary);
+}
+
+.listingPrice {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.listingMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.listingActions {
+  display: flex;
+  gap: 8px;
+}
+
+.statusSelect {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.statusSelect:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOUTON MODIFIER (Édition annonce)
+   ─────────────────────────────────────────────────────────────
+   Utilisé par: MyListings.jsx ligne ~147
+   Relations: Redirige vers EditListing.jsx avec ID
+   ═══════════════════════════════════════════════════════════════ */
+.editBtn {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editBtn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOUTON SUPPRIMER (Suppression annonce)
+   ─────────────────────────────────────────────────────────────
+   Utilisé par: MyListings.jsx ligne ~160
+   Relations: Appelle deleteListing() → supabase.delete()
+   ═══════════════════════════════════════════════════════════════ */
+.deleteBtn {
+  padding: 8px 16px;
+  background: var(--error);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.loading {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .listingsGrid {
+    grid-template-columns: 1fr;
+  }
+}

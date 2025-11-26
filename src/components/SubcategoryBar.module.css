@@ -1,0 +1,115 @@
+.subcategoryBarWrapper {
+  width: 100%;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 202px;
+  z-index: 998;
+  min-height: 60px;
+}
+
+.subcategoryBar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.subcategoryContent {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  flex-wrap: wrap;
+}
+
+.subcategoryContent::-webkit-scrollbar {
+  height: 6px;
+}
+
+.subcategoryContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.subcategoryContent::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.subcategoryContent::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.subcategoryChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.subcategoryChip:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subcategoryChip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+.subcategoryChip.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.4);
+}
+
+@media (max-width: 768px) {
+  .subcategoryBarWrapper {
+    top: 174px;
+    min-height: 56px;
+  }
+
+  .subcategoryBar {
+    padding: 8px 12px;
+  }
+
+  .subcategoryChip {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subcategoryBarWrapper {
+    top: 166px;
+    min-height: 52px;
+  }
+
+  .subcategoryBar {
+    padding: 6px 8px;
+  }
+
+  .subcategoryChip {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}
